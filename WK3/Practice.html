@@ -22,8 +22,9 @@
                   processing: v = Math.PI * Math.pow(q, 2) * a * (w*a+(2540*d))*10000000;
                   output:       volume of space inside the tire
             */
+           
             function volumeInsideTire() {
-                var w = parseFloat(document.getElementById('Width').value);
+                var w = parseFloat(document.getElementById('width').value);
                 var a = parseFloat(document.getElementById('aspectRatio').value);
                 var d = parseFloat(document.getElementById('diameter').value);
                 var volume = Math.PI * Math.pow(w, 2) * a * (w*a+(2540*d))/10000000;
