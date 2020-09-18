@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content = "Jenny Min">
+        <title>5.10 - Volume in Tire</title>
+        <style>
+            body {
+                width: 80%;
+                margin-left: 10%;
+                text-align: center;
+            }
+        </style>
+        <script>
+            /*Assignment: the size of a car tire in United States is represented with three numbers like this: 205/60R 15. The
+                v = Math.PI * Math.pow(w, 2) * a * (w*a+(2540*d))*10000000;
+            where v is the volume in cubic centimeters, w is the width of the tire in millimeters, a is the aspect ratio of the tire
+                **Degining Table**
+                  input:        width of tire in millimeters
+                                aspects ratio
+                                diameter in inches of the wheel that the tire fits
+                  processing: v = Math.PI * Math.pow(q, 2) * a * (w*a+(2540*d))*10000000;
+                  output:       volume of space inside the tire
+            */
+            function volumeInsideTire() {
+                var w = parseFloat(document.getElementById('Width').value);
+                var a = parseFloat(document.getElementById('aspectRatio').value);
+                var d = parseFloat(document.getElementById('diameter').value);
+                var volume = Math.PI * Math.pow(w, 2) * a * (w*a+(2540*d))/10000000;
+                document.getElementById('outputDiv').innerHTML = volume.toFixed(1);
+            }
+    
+        </script>
+    </head>
+    <body>
+        <h1>Calculate volume inside tire</h1>
+        Tire width (mm): <input type="text" id="width"> <br>
+        Aspect Ratio: <input type="text" id="aspectRatio"><br>
+        Wheel Diameter (in): <input type="text" id="diameter">
+        <br><br>
+        <button onclick="volumeInsideTire()">Volume (cm^3)</button>
+        <div id="outputDiv"></div>
+    </body>
+</html>
