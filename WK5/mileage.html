@@ -20,7 +20,7 @@ function MperG() {
     let UGal = parseFloat(document.getElementById('usedGal').value);
 
     // Round the distance to two digits after the decimal.
-    let Cal = parseFloat(((endM - beginM) / UGal).value).round(2);
+    let Cal = parseFloat((endM - beginM) / UGal);
     
 
     // Display the distance to the user.
