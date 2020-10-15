@@ -17,7 +17,7 @@ function QuartsToLiters() {
     let L = Q * .946353;
 
     // Display the number of liters.
-    document.getElementById('QLDiv').innerHTML = L;
+    document.getElementById('QLDiv').innerHTML = L + "liters";
 }
 </script>
 </head>
@@ -25,6 +25,6 @@ function QuartsToLiters() {
 <body>
 The number of quarts<input type="text" id="NumQ"><br>   
 <button type="button" onclick="QuartsToLiters()">Convert</button>  
-The number of liters<div id="QLDiv"></div>  
+<div id="QLDiv"></div>  
 </body>
 </html>
