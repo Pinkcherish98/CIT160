@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Miles per Gallon</title>
+
+<script>
+/* Input: Beginning mileage and ending mileage
+ * Processing:
+ *   1. Calculate the difference between the ending mileage and the beginning mileage.
+ *   2. Divide by the used of gallon.
+ * Output: the rounded miles per gal
+ */
+function MperG() {
+    // Get the beginning and ending mileage from the user.
+    let beginM = parseFloat(document.getElementById('beginMiles').value);
+    let endM = parseFloat(document.getElementById('endMiles').value);
+    
+    // Get the number of the gallon used from the user.
+    let UGal = parseFloat(document.getElementById('usedGal').value);
+
+    // Round the distance to two digits after the decimal.
+    let Cal = Math.round(endM - beginM) / UGal;
+
+    // Display the distance to the user.
+    document.getElementById('outputDiv').innerHTML = Cal;
+}
+</script>
+</head>
+
+<body>
+Enter the beginning of odometer: <input type="text" id="beginMiles"><br>
+Enter the ending of odometer: <input type="text" id="endMiles"><br>  
+Enter the number of used gallon: <input type="text" id="usedGal">  
+  
+<button type="button" onclick="MperG()">Miles per Gallon</button>  
+<div id="outputDiv"></div>  
+</body>
+</html>
