@@ -27,9 +27,33 @@ function MperG() {
     document.getElementById('outputDiv').innerHTML = Cal.toFixed(2) + " " + "miles per gal";
 }
 </script>
+<style>
+    body{
+        background-color: burlywood;
+        font-size: 30;
+        color: blueviolet;
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+    }
+    h1{
+        font-family: 'Times New Roman', Times, serif;
+        font: bold;
+        font-size: 50;
+        text-align: center;
+        
+    }
+    button{
+        color: cadetblue;
+        background-color: cornsilk;
+        font-family: monospace;
+        text-align: right;
+    }
+</style>
 </head>
 
 <body>
+    <h1>Calculation</h1>
 Enter the beginning of odometer: <input type="text" id="beginMiles"><br>
 Enter the ending of odometer: <input type="text" id="endMiles"><br>  
 Enter the number of used gallon: <input type="text" id="usedGal"><br>  
