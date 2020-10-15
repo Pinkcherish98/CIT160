@@ -20,7 +20,7 @@ function MperG() {
     let UGal = parseFloat(document.getElementById('usedGal').value);
 
     // Round the distance to two digits after the decimal.
-    let Cal = Math.round(endM - beginM) / UGal;
+    let Cal = Math.round((endM - beginM) / UGal);
 
     // Display the distance to the user.
     document.getElementById('outputDiv').innerHTML = Cal;
@@ -31,7 +31,7 @@ function MperG() {
 <body>
 Enter the beginning of odometer: <input type="text" id="beginMiles"><br>
 Enter the ending of odometer: <input type="text" id="endMiles"><br>  
-Enter the number of used gallon: <input type="text" id="usedGal">  
+Enter the number of used gallon: <input type="text" id="usedGal"><br>  
   
 <button type="button" onclick="MperG()">Miles per Gallon</button>  
 <div id="outputDiv"></div>  
