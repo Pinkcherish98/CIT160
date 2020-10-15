@@ -20,10 +20,11 @@ function MperG() {
     let UGal = parseFloat(document.getElementById('usedGal').value);
 
     // Round the distance to two digits after the decimal.
-    let Cal = Math.round((endM - beginM) / UGal);
+    let Cal = parseFloat(((endM - beginM) / UGal).value).round(2);
+    
 
     // Display the distance to the user.
-    document.getElementById('outputDiv').innerHTML = Cal + "miles per gal";
+    document.getElementById('outputDiv').innerHTML = Cal + " " + "miles per gal";
 }
 </script>
 </head>
