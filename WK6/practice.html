@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+<meta charset= "utf-8">    <!--unicode tranformation format - 8-bit-->
+<title>What Footwear should I Wear for this Weather?</title>
+
+<script>
+  "use strict";
+  /*Defining Table
+   *Input: Weather type
+   *Processing: Determine shoe type for the weather type
+   *Output: Display suggested shoe type
+  */
+
+  function footwearsuggestion() {
+
+    //Get the user weather input from text field.
+    let weather = document.getElementById("weather").value;
+    
+   //Determine shoe type.
+   let footwear;
+   if (weather == "hot") {
+   footwear = "sandals";
+  }
+   else if (weather == "rain") {
+   footwear = "galoshes";
+  }
+   else if (weather == "snow") {
+   footwear = "boots";
+  }
+   else {
+   footwear = "shoes";
+  }
+//Display shoe type.
+   document.getElementById("output").innerHTML = footwear;
+}
+
+</script>
+</head>
+
+<body>
+  <h1>What Footwear should I Wear With this Weather?</h1>
+<h4>Undecided or don't know what shoes will work best for these conditions? Let us help!</h4>
+
+<p> Enter your weather type here (lowercase letters):<input type="text" id="weather"></p><br><br>
+
+<button type="button" onclick="footwear suggestion ()"><strong>What footwear?</strong></button>
+<div id="output"></div>
+</body>
+
+</html>

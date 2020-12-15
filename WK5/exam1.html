@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume of a Torus</title>
+<script>
+/* Defining Table
+ * Input: Inner and outer numbers
+ * Processing: Computes the volume
+ * Output: outputs the volume
+ */
+ function computeVolume() {
+            let inner = parseFloat(document.getElementById('inner').value);
+            let outer = parseFloat(document.getElementById('outer').value);
+            //num 18 on this test has the math pow wrong
+            let output = (Math.pow(Math.PI, 2)) * (inner + outer) * (Math.pow((inner - outer), 2)) / 4 ;
+            document.getElementById('outputDiv').innerHTML = output;
+        }
+</script>
+</head>
+
+<body>
+    <h1>Volume of a Torus</h1>
+    Inner radius <input type="text" id="inner"><br>
+    Outer radius <input type="text" id="outer"><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Volume <div id="outputDiv"></div>
+</body>
+</html>

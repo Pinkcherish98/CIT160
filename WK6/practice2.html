@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <script>
+        function    mathQuiz(){
+            /* Input: two numbers with an arithemetic operator
+             * Processing: calculate the problem entered
+             * Output: if it is correct or incorrect
+             */
+             //A big thanks to Jessie Mangum. I didn't copy anything from her code, but I used it as a reference to help me figure out what to do.
+​
+             var x = parseFloat(document.getElementById('a').value);
+             var y = parseFloat(document.getElementById('b').value);
+             var sign = document.getElementById('operator').value;
+             var outcome = parseFloat( document.getElementById('result').value);
+             var calculate;
+             var rightOrNot;
+
+             if (sign == "+") {
+                 calculate = x + y;
+             }
+             else if (sign == "-") {
+                 calculate = x - y;
+             }
+             else if (sign == "*") {
+                 calculate = x * y;
+             }
+             else if (sign == "/") {
+                 calculate = x / y;
+             }
+             if (outcome == calculate) {
+                rightOrNot = "Correct! Good Job!";
+             }
+             else { 
+             rightOrNot = "Incorrect! Try again! ";
+             }
+​
+            var message = rightOrNot;
+            document.getElementById('rightOrNot').innerHTML = message;
+        }
+    </script>
+
+    <style>
+​
+    </style>
+
+<body>
+    <h3>Math Time! :)</h3>
+    <input type="text" id="a" placeholder="number">
+    <input type="text" id="operator" placeholder="+ - * /">
+    <input type="text" id="b" placeholder="number">
+    <input type="text" id="result" placeholder="What is the answer?">
+​
+    
+    <button type="button" onclick="mathQuiz()">Check My Answer</button>
+    <div id="rightOrNot"></div>
+</head>
+</body>
+</html>

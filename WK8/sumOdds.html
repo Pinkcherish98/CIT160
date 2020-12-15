@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of the Odds</title>
+    <style>
+        body{
+            width:70%;
+            text-align:center;
+            margin-left:10%;
+        }
+        input{
+            width: 30%;
+        }
+        #outputDiv{
+            width: 30%;
+            border: 5px solid purple;
+            margin:auto;
+        }
+        button{
+            margin-bottom: 10px;
+            color:rgb(245, 107, 91);
+            background-color: cornsilk;
+        }
+        h2{
+            border: 5px solid purple;
+        }
+        
+    </style>
+    <script>
+        function    sumOfOdds(){
+            /* Input: a number from the user
+             * Processing: declare sum variable, find all the odd integers  between 1 and user number, then add odds together.
+             * Output: the sum of all the odd numbers between 1 and user number
+             */
+            var input = parseFloat(document.getElementById('numberInput').value);
+            let sum = 0;
+            for (var x = 1; x <= input; x += 2){
+                 sum += x;
+            }
+            document.getElementById('outputDiv').innerHTML = sum;
+        }
+    </script>
+    <style>
+​
+    </style>
+</head>
+<body>
+    <h2>What would the sum of your number's odds be?</h2> <br>
+    <input type="text" id="numberInput" placeholder="Plese enter a number"><br><br>
+    <button type="button" onclick="sumOfOdds()">Find The Sum of Odds!</button><br>
+    <div id="outputDiv"></div>
+</body>
+</html>

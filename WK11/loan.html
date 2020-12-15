@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        button{
+        background-color: rgb(170, 25, 25);
+        color:white;
+        margin:5px;
+        padding:5px;
+        border-radius:0px;
+        }
+        body{
+        background-color:rgb(176, 221, 223);
+    
+        color: rgb(6, 15, 66);
+        }
+    </style>
+    <script>
+        
+            /* Input: Principal, annual rate, number of years, periods per year
+             * Processing: dofv()
+                            get values from input
+                            call computeFutureValue()
+                               f= a (1 + r) ^ N
+                               return f
+             * Output: Future value
+             */
+        function doPayment (){
+            var principal = parseFloat(document.getElementById('principal').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var years = parseFloat(document.getElementById('years').value);
+            var periods = parseFloat(document.getElementById('periods').value);
+            var payment = computePayment(principal, rate, years, periods);
+            
+            document.getElementById('outputPayment').innerHTML = "$" + payment.toFixed(2);
+        }
+        function computePayment(principal, annualRate, years, periodsPerYear){
+            var r = annualRate / periodsPerYear;
+            var n = years * periodsPerYear;
+            var p= (principal * r) / (1 - Math.pow((1 + r), -n));
+            return p;
+        }
+        function doBalance (){
+            var principal = parseFloat(document.getElementById('principal').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var years = parseFloat(document.getElementById('years').value);
+            var periods = parseFloat(document.getElementById('periods').value);
+            var paymentsToDate = parseFloat(document.getElementById('paymentsToDate').value);
+            var balance = computeBalance(principal, rate, years, periods,paymentsToDate);
+            
+            document.getElementById('outputBalance').innerHTML = "$" + balance.toFixed(2);
+        }
+        function computeBalance (principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate){
+            var r = annualRate / periodsPerYear;
+            var p = computePayment(principal, annualRate, years, periodsPerYear);
+            var b = principal * Math.pow((1 + r), numberOfPaymentPaidToDate) - ((p * (Math.pow((1 + r), numberOfPaymentPaidToDate) - 1)) / r);
+            return b;
+        }
+        
+        
+    </script>
+    
+</head>
+<body>
+    <h2> Loan Calculator</h2>
+    <table>
+        <tr>
+            <td> Amount borrowed (principal)</td>
+            <td><input type="text" id="principal"></td>
+        </tr>
+        <tr>
+            <td> Annual interest rate (example .065)</td>
+            <td><input type="text" id="rate"></td>
+        </tr>
+        <tr>
+            <td> Number of Years</td>
+            <td><input type="text" id="years"></td>
+        </tr>
+        <tr>
+            <td> Payments per year</td>
+            <td><input type="text" id="periods"></td>
+     </tr>
+     <tr>
+       <td> <button type="button" onclick="doPayment()">Compute Payment</button></td>
+       <td id="outputPayment"></td>
+       <tr>
+        <td> Number of payments paid to date</td>
+        <td><input type="text" id="paymentsToDate"></td>
+    </tr>
+    <tr>
+         <td> <button type="button" onclick="doBalance()">Compute Payment</button></td>
+         <td id="outputBalance"></td>
+​
+     </tr>
+    </table>
+</body>
+</html>

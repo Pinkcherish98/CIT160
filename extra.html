@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Golf Card Game</title>
+
+    <style>
+
+        body {
+
+            width: 80%;
+
+            margin-left: 10%;
+
+            text-align: left;
+
+        }
+
+    </style>
+
+
+    <script>
+
+        /* Assignment:
+
+                A function named golfScore that takes one parameter: an array named hand.
+
+                This function must compute and return the score for the cards by adding the values
+
+                of all the cards in hand. For example, if hand were this array:
+
+                [5, 2, "King", 3, 1, "Queen"], the golfScore function would return 31.
+
+        */
+
+
+        function golfScore() {
+
+            var userInput = document.getElementById("userInput").value;   // getting input element by id and then accesssing its value
+
+            const list = userInput.split(",");    // splitting input with , => returns array of values ex: 1,2,K as ['1', '2', 'K']
+
+            let sum = 0;
+            for (let cardNumber of list) {     // iterating each number for adding to sum
+                cardNumber = cardNumber.trim();   // trimming white spaces if any
+                if (cardNumber === 'K' ||
+                    cardNumber === 'Q' ||
+                    cardNumber === 'J') {         // checking if number is K,Q,J
+                    sum = sum + 10;      // adding to sum
+                } else {
+                    sum = sum + Number(cardNumber);    // converting string to number ex: '1' to 1
+                }
+
+            }
+
+            document.getElementById("outputDiv").innerHTML = sum;    // displaying final sum
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+<h1>Find Score</h1>
+
+Please enter a list of numbers separated by commas. Ace is equal to 1. Record King as K, Queen as Q and Jack as
+J:<br><br>
+<input type="text" id="userInput"><br><br>
+
+<button type=button onclick="golfScore()">Total Score</button>
+<br><br>
+
+<div id="outputDiv"></div>
+
+</body>
+
+</html>

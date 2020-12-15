@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="author" content="Oliver Modesto">
+      <title>Discount Page</title>
+      <script>
+      
+      function totalCost() {
+        let dayOfWeek = new Date().getDay();
+        let subtotal = parseFloat(document.getElementById('subtotal').value);
+        let tax = 0.06
+        let discount = 0.1
+​
+        if (dayOfWeek == 2 && subtotal > 50 || dayOfWeek == 3 && subtotal > 50) {
+          subtotal -= subtotal * discount;
+          } else {
+            subtotal += subtotal * tax;
+            }
+        let message = "Your total is $" + subtotal.toFixed(2);
+        document.getElementById("output").innerHTML = message;
+        }
+      </script>
+  </head>
+      <body>
+        <h1>Discount Calculator</h1>
+        Please enter your subtotal: <input type="text" id="subtotal"> <br><br>
+        <button type="button" onclick="totalCost()">Calculate</button><br><br>
+        <p>
+          <div id="output"></div>
+        </p>
+      </body>
+</html>

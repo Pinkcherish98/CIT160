@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>template</title>
+
+<script>
+	/*Input: Temperature and Speed integers
+	*Processing: the calulations for the formula for wind chill
+	*Output: the wind chill for that day
+	*/
+	
+	function doInputOutput() {
+        var temp = parseInt(document.getElementById('temperature').value);
+        var speed = parseInt(document.getElementById('speed').value);
+        var answer = windChill(temp, speed);
+
+        document.getElementById('output').innerHTML = "Looks like today will be... " + answer + " fahrenheit.";
+	
+	}
+
+    function windChill(t, s){
+        let chill = 35.74 + (0.6215 * t) - (35.75 * (s**0.16)) + (0.4275 * t * (s**0.16));
+        return chill.toFixed(2);
+       
+
+    }
+
+</script>
+
+</head>
+
+<body>
+<h2>Calulate the wind chill...</h2>
+<p>Today's Temperature: <input type="text" id="temperature" size= 5></p>
+<p>Wind Speed: <input type="text" id="speed" size= 5></p>
+<button type="button" onclick="doInputOutput()">Calculate</button>
+<div id="output"></div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+    <style>
+        button{
+        background-color: white;
+        color: rgb(12, 36, 71);
+        margin:5px;
+        padding:10px;
+        border-radius:16px;
+        }
+        body{
+        background-color:rgb(12, 36, 71);
+        width: 80%;
+        margin-left:10%;
+        text-align:center;
+        color: white;
+        }
+    </style>
+    <script>
+        function doInputOutput(){
+            /* Input: temperature and wind speed
+             * Processing: call second function windChill, stor the value returned by windChill in a variable
+             * Output: the value returned by windChill to the div
+             */
+            var temperature = parseFloat(document.getElementById('Temperature').value);
+            var windSpeed = parseFloat(document.getElementById('WindSpeed').value);
+            let result = windChill ( temperature, windSpeed)
+            document.getElementById('outputDiv').innerHTML = "Wind chill is " + result + " degrees Farenheight";
+        }    
+        function windChill (temp, wind){
+            let factor = 35.74 + (0.6215 * temp) - 35.75 * (Math.pow(wind, 0.16)) +  (0.4275 * temp * Math.pow(wind, 0.16));
+            var finalTemp = Math.round(factor);
+            return finalTemp;
+        }
+​
+    </script>
+    
+</head>
+<body>
+    <h2>Wind Chill Factor</h2>
+    <input type="text" id="Temperature" placeholder="Temperature">
+    <input type="text" id="WindSpeed" placeholder="Wind Speed">
+    <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2 Super Powers</title>
+    <style>
+        button{
+        background-color: rgb(253, 242, 125);
+        color:rgb(40, 102, 104);
+        margin:5px;
+        padding:10px;
+        border-radius:16px;
+        }
+        body{
+        background-color:rgb(64, 170, 173);
+        width: 80%;
+        margin-left:10%;
+        text-align:center;
+        color: rgb(253, 242, 125);
+        }
+    </style>
+    <script>
+            /* Input: none
+             * Processing: Rasing 2 to the powers between and including 0-31.
+             * Output: results of the powers of two up to 2^31
+             */
+            
+        function    powersOfTwo(){
+            var output = '1';
+            var i = 1;
+            while(i > 0 && i <= 31){
+                var answer = Math.pow(2,i);
+                output += ", "+ answer;
+                i++;
+            }
+​
+            document.getElementById('outputDiv').innerHTML = output;
+        }
+    </script>
+   
+</head>
+<body>
+    
+    <button type="button" onclick="powersOfTwo()">Find the 2 Super Powers</button>
+    <div id="outputDiv"></div>
+</body>
+</html>
