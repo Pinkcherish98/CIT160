@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> quarts to litres </title>
+<script>
+/* input: A measurement in quarts
+ * processing: convert the mesurement from quarts to litres
+ * output: measurement in lires for the user
+*/
+
+function quartsToLitres() {
+
+// Read a measurement in quarts from the user
+let text= parseFloat(document.getElementById('quartsInputBox').value);
+
+// convert the user input into a number
+let q = parseFloat (text);
+
+// convert quarts to litres
+let l= text * 0.946353;
+
+//Display measurement in litres for the user
+document.getElementById('litresDiv').innerHTML=l;
+}
+
+</script>
+</head>
+
+<body>
+Enter quarts: <input type ="text" id= "quartsInputBox">                             
+   
+<button type = "button" onclick = "quartsToLitres()">convert</button>
+<div id="litresDiv"></div>
+</body>       
+</html>
